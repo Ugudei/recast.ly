@@ -1,4 +1,5 @@
 import VideoList from './VideoList.js';
+import VideoPlayer from './VideoPlayer.js';
 // import VideoListEntry from './VideoListEntry.jsx';
 
 var App = (props) => {
@@ -13,7 +14,7 @@ var App = (props) => {
       </nav>
       <div className="row">
         <div className="col-md-7">
-          <div><h5><em>videoPlayer</em> Dedicated to {props.name}</h5></div>
+          <VideoPlayer video={props.videos[0]}/>
         </div>
         <div className="col-md-5">
           <VideoList videos={props.videos} />
