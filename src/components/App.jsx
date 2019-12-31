@@ -8,17 +8,21 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      done: false
+      playing: ExampleVideoData[0]
     };
   }
-  onVideoClick() {
-    console.log('this', this);
+  onVideoClick(videoTitle) {
 
+    console.log('this', this);
+    this.setState({
+      playing: videoTitle
+    });
+    console.log('state play:', this.state.playing);
 
   }
   render() {
-    var defaultVideo = ExampleVideoData[0];
     //console.log('evan', ExampleVideoData);
+    //var videoPlaying = {this.state.playing ? defaultVideo = ExampleVideoData[0] : defaultVideo = this };
     return (
       <div>
         <nav className="navbar">
@@ -28,7 +32,7 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer video={defaultVideo}/>
+            <VideoPlayer video={this.state.playing}/>
           </div>
           <div className="col-md-5" >
             <VideoList videos={ExampleVideoData} onVideoClick={this.onVideoClick.bind(this)}/>
