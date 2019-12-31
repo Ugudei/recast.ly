@@ -2,7 +2,7 @@ import VideoList from './VideoList.js';
 // import VideoListEntry from './VideoListEntry.jsx';
 
 var App = (props) => {
-  console.log(props);
+  //console.log(props);
 
   return (
     <div>
@@ -13,7 +13,7 @@ var App = (props) => {
       </nav>
       <div className="row">
         <div className="col-md-7">
-          <div><h5><em>videoPlayer</em> view goes here {props.name}</h5></div>
+          <div><h5><em>videoPlayer</em> Dedicated to {props.name}</h5></div>
         </div>
         <div className="col-md-5">
           <VideoList videos={props.videos} />
