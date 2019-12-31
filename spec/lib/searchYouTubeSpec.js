@@ -81,6 +81,8 @@ describe('searchYouTube', function() {
     xhr.restore();
 
     searchYouTube(options, (data) => {
+      console.log('date inside spec', data);
+      console.log('example inside spec', exampleVideoData);
       expect(hasSameShape(data, exampleVideoData)).to.be.true;
       done();
     });

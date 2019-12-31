@@ -2,7 +2,7 @@
 var VideoListEntry = (props, video) => {
   //console.log(props);
   //console.log(props.video.snippet.thumbnails.default.url);
-  console.log(props);
+  //console.log(props);
 
   return (
 

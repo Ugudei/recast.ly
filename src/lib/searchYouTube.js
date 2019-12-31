@@ -3,22 +3,22 @@ import YOUTUBE_API_KEY from '../config/youtube.js';
 
 var searchYouTube = (options, callback) => {
   $.ajax({
-    url: 'https://www.googleapis.com/youtube/v3/search',
     type: 'GET',
+    url: 'https://www.googleapis.com/youtube/v3/search',
     data: {
+      part: 'snippet',
       key: options.key,
       q: options.query,
       maxResults: options.max,
-
+      videoEmbeddable: 'true',
+      type: 'video'
     },
-    dataType: 'json',
-    videoEmbeddable: true,
-   // success: callback,
-    complete: callback
+    //dataType: 'json',
 
-    // error: errorCB || function(error) {
-    //   console.error('chatterbox: Failed to fetch messages', error);
-    // }
+    success: function (result) {
+      console.log('myresult: ', result.items);
+      callback(result.items);
+    }
   });
   // TODO
 };
