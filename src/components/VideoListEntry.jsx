@@ -1,10 +1,12 @@
+
 var VideoListEntry = (props) => {
   //console.log(props);
   //console.log(props.video.snippet.thumbnails.default.url);
   //console.log(props.video.snippet.title);
 
   return (
-    <div className="video-list-entry media">
+    //console.log('vle', this)
+    <div className={props.video.id.videoId} onClick={props.onVideoClick}>
       <div className="media-left media-middle">
         <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt={props.video.snippet.title} />
       </div>
